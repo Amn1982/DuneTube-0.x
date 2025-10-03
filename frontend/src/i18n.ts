@@ -193,6 +193,8 @@ const resources = {
       },
       footer: {
         rights: "All rights reserved.",
+        terms: "Terms",
+        privacy: "Privacy",
       },
     },
   },
@@ -378,6 +380,8 @@ const resources = {
       },
       footer: {
         rights: "تمامی حقوق محفوظ است.",
+        terms: "شرایط استفاده",
+        privacy: "حریم خصوصی",
       },
     },
   },
@@ -563,6 +567,8 @@ const resources = {
       },
       footer: {
         rights: "جميع الحقوق محفوظة.",
+        terms: "الشروط والأحكام",
+        privacy: "سياسة الخصوصية",
       },
     },
   },

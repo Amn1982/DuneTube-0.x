@@ -2,6 +2,7 @@ import { Suspense, useEffect } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import Footer from "./components/Footer";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import { PreferencesProvider, usePreferences } from "./context/PreferencesContext";
 import Catalog from "./pages/Catalog";
@@ -126,9 +127,7 @@ const App = () => {
           </Suspense>
         </main>
 
-        <footer className="py-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} DuneTube · {t("footer.rights")}
-        </footer>
+        <Footer />
       </div>
     </div>
   );
