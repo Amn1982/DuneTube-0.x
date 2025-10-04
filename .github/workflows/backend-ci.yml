@@ -3,26 +3,44 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Backend not present? skip gracefully
+        id: guard
+        run: |
+          if [ ! -f backend/requirements.txt ]; then
+            echo "no_backend=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "no_backend=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.no_backend == 'false'
         with:
           python-version: '3.12'
+
       - name: Install
+        if: steps.guard.outputs.no_backend == 'false'
         run: |
           python -m venv v
           . v/bin/activate
           pip install -r backend/requirements.txt
+
       - name: Django checks
+        if: steps.guard.outputs.no_backend == 'false'
         run: |
           . v/bin/activate
           python backend/manage.py check
-      - name: Placeholder tests (Codex will replace)
+
+      - name: Placeholder
         run: |
-          . v/bin/activate
-          python - <<'PY'
-print("No tests yet; Codex will add smoke tests in P1.")
-PY
+          if [ "${{ steps.guard.outputs.no_backend }}" = "true" ]; then
+            echo "Backend is not present yet. Waiting for Codex to scaffold P1..."
+          else
+            echo "No tests yet; Codex will add smoke tests in P1."
+          fi
