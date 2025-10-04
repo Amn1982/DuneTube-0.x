@@ -19,3 +19,9 @@ patches/
 frontend/test-smoke.js
 frontend/src/components/tests/
 frontend/src/context/tests/
+nul
+frontend/test-smoke.js
+frontend/src/components/tests/
+frontend/src/context/tests/
+patches/
+agents-mode.patch

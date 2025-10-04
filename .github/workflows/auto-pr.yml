@@ -1,7 +1,7 @@
 name: Auto PR (work-phase2 -> main)
 on:
   push:
-    branches: [ work-phase2 ]
+    branches: [ work-phase2, feat/*, fix/* ]
   workflow_dispatch:
 permissions:
   contents: read
