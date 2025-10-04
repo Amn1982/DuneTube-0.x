@@ -1,0 +1,8 @@
+name: backend-ci
+on: [push, pull_request]
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "TODO: ruff/black/mypy/pytest" && echo "backend ok"

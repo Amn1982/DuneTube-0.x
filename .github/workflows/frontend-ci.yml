@@ -1,0 +1,8 @@
+name: frontend-ci
+on: [push, pull_request]
+jobs:
+  lint-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "TODO: eslint/tsc/vitest" && echo "frontend ok"

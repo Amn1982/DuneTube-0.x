@@ -1,0 +1,14 @@
+name: test-permission
+on: [workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secrets availability
+        run: |
+          echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN && 'OK' || 'Missing' }}"
+          echo "GH_PAT: ${{ secrets.GH_PAT && 'OK' || 'Missing' }}"
+      - name: Try a dry git
+        run: |
+          echo "codex test $(date)" > TEST.md
+          echo "Created TEST.md"
