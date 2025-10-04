@@ -1,8 +1,15 @@
 name: frontend-ci
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
 jobs:
   lint-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "TODO: eslint/tsc/vitest" && echo "frontend ok"
+      - name: Frontend smoke
+        run: |
+          echo "TODO: add eslint/tsc/vitest"
+          echo "frontend ok"
