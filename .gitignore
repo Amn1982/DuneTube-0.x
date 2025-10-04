@@ -1,21 +1,9 @@
-__pycache__/
-*.py[cod]
-*.sqlite3
-*.log
-.env
-.env.*
-.venv/
-venv/
+# Node / Vite
 node_modules/
 dist/
-build/
+# Python / Django
+__pycache__/
+*.pyc
+.env
+# OS
 .DS_Store
-coverage/
-staticfiles/
-backend/db.sqlite3
-nul
-agents-mode.patch
-patches/
-frontend/test-smoke.js
-frontend/src/components/tests/
-frontend/src/context/tests/
