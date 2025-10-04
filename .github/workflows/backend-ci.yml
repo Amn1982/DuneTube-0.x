@@ -1,0 +1,15 @@
+name: backend-ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Backend smoke
+        run: |
+          echo "TODO: add ruff/black/mypy/pytest"
+          echo "backend ok"
